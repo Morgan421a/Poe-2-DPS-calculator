@@ -68,7 +68,7 @@ class Crossbow(Weapon):
         self.reload_time = reload_time
 
     def __str__(self):
-        return super().__str__() + f", Reload Time: {self.reload_time}"
+        return super().__str__() + f" Reload Time: {self.reload_time}"
 
 weapon_list = {}
 
@@ -133,7 +133,7 @@ while power_on:
 
     name = input("What is the name of this weapon? ").capitalize()
 
-    # Create weapon object with all correct parameters
+    
     if type == "Crossbow":
         reload_time = get_float_input("Enter reload time: ")
         weapon = Crossbow(type, name, dps, critical_chance, attacks_per_second, reload_time, quality, item_level, required_level, rarity)
