@@ -1,5 +1,6 @@
-from database import db
+from database.db import db
 from calculator.PoE2_DPS_Checker import run_calculator
+
 
 def main():
     connection = db()
