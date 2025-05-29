@@ -1,5 +1,6 @@
 from database.db import *
 from calculator.PoE2_DPS_Checker import run_calculator
+from Website import create_app
 
 
 def main():
@@ -14,6 +15,9 @@ def main():
     else:
         print("Failed to connect to DB")
 
+app = create_app()
+
 print(f"In main.py {__name__}")
 if __name__ == "__main__":
+    app.run(debug=True)
     main()
