@@ -43,7 +43,7 @@ def create_table_if_not_exists(weapon, connection):
         base_columns += ", reload_time Numeric(4,2) NOT NULL"
 
     create_query = sql.SQL("CREATE TABLE IF NOT EXISTS {table} ({fields})").format(
-        table=sql.identifier(table_name),
+        table=sql.Identifier(table_name),
         fields=sql.SQL(base_columns)
     )
 
@@ -114,15 +114,7 @@ base_columns = """
     rarity VARCHAR(20) NOT NULL
 """
 
+print(f"In db.py {__name__}")
 
-
-if __name__ == "__main__":
-    connection = db()
-    if connection is not None:
-        weapon_dict = run_calculator()
-
-        for weapon in weapon_dict.values():
-            create_table_if_not_exists(weapon, connection)
-            insert_weapon_list(weapon, connection)
 
 
